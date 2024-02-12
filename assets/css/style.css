@@ -13,12 +13,15 @@ body {
   background-color: var(--list-bg-color);
   display: grid;
   color: var(--text-color);
-  grid-template-areas: "header header header" "menu main main" "footer footer footer";
-  grid-template-rows: 120px auto 100px;
-  grid-template-columns: 150px auto;
+  grid-template: 120px auto 100px / 150px auto;
+  grid-template-areas:
+    "header header header"
+    "menu main main"
+    "footer footer footer";
   height: 100vh;
   margin: 0;
   overflow: auto;
+  font-family: "Roboto", sans-serif;
 }
 
 body > * {
@@ -36,7 +39,6 @@ body > * {
 
 .header {
   grid-area: header;
-  border: 1px solid var(--header-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,20 +46,20 @@ body > * {
 
 .menu {
   grid-area: menu;
-  border: 1px solid var(--menu-color);
   left: 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .main {
   grid-area: main;
-  border: 1px solid var(--main-color);
   right: 0;
   top: 0;
 }
 
 .footer {
   grid-area: footer;
-  border: 1px solid var(--footer-color);
   bottom: 0;
 }
 
@@ -67,7 +69,7 @@ body > * {
 }
 
 ul {
-  list-style-type: none;
+  list-style: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -84,6 +86,7 @@ li {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  transition: color 0.5s ease;
 }
 
 .menu-item:hover {
@@ -93,7 +96,6 @@ li {
 .logo_container {
   order: 1;
   width: 300px;
-  border: solid 1px var(--header-color);
 }
 
 .menu_sup {
@@ -112,4 +114,59 @@ li {
 
 .menu_sup ul li {
   margin: 0 10px;
+}
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 12px;
+}
+
+.menu ul li {
+  display: inline-block;
+  margin-right: 20px;
+  transition: all 0.5s ease;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+  font-size: 15px;
+}
+
+.menu ul li:hover {
+  transform: scale(1.2);
+}
+
+.menu ul li a:hover {
+  color: #ff6347;
+}
+.caja {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.imagen {
+  width: 30%;
+  text-align: center;
+}
+
+.imagen img {
+  width: 100%;
+  height: auto;
+}
+
+.imagen p {
+  margin-top: 10px;
+}
+.caja .imagen img {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+  transform: scale(1);
+}
+
+.caja .imagen img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
 }
