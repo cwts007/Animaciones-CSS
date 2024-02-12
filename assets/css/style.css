@@ -1,51 +1,115 @@
-div {
-  border: solid 2px black;
+:root {
+  --header-color: red;
+  --menu-color: green;
+  --main-color: blue;
+  --footer-color: purple;
+  --list-bg-color: #ffffff;
+  --menu-item-color: rgb(38, 0, 255);
+  --menu-item-hover-color: #ff0000;
+  --text-color: rgb(0, 0, 0);
 }
 
-header {
+body {
+  background-color: var(--list-bg-color);
+  display: grid;
+  color: var(--text-color);
+  grid-template-areas: "header header header" "menu main main" "footer footer footer";
+  grid-template-rows: 120px auto 100px;
+  grid-template-columns: 150px auto;
+  height: 100vh;
+  margin: 0;
+  overflow: auto;
+}
+
+body > * {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.header,
+.menu,
+.main,
+.footer {
+  position: sticky;
+}
+
+.header {
+  grid-area: header;
+  border: 1px solid var(--header-color);
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
-.caja1 {
-  flex: 20%;
+.menu {
+  grid-area: menu;
+  border: 1px solid var(--menu-color);
+  left: 0;
 }
 
-.caja1 img {
-  width: 150px;
-  height: 150px;
-  max-width: 100%;
+.main {
+  grid-area: main;
+  border: 1px solid var(--main-color);
+  right: 0;
+  top: 0;
 }
 
-.caja2 {
-  flex: 80%;
+.footer {
+  grid-area: footer;
+  border: 1px solid var(--footer-color);
+  bottom: 0;
 }
 
-main {
+.logo {
+  height: 100px;
+  margin-left: 20px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--list-bg-color);
+}
+
+li {
+  float: left;
+}
+
+.menu-item {
+  display: block;
+  color: var(--menu-item-color);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.menu-item:hover {
+  color: var(--menu-item-hover-color);
+}
+
+.logo_container {
+  order: 1;
+  width: 300px;
+  border: solid 1px var(--header-color);
+}
+
+.menu_sup {
+  order: 2;
   display: flex;
+  justify-content: center;
+  flex-grow: 1;
 }
 
-.caja3 {
-  flex: 10%;
-}
-
-.caja4 {
-  flex: 90%;
-}
-
-footer {
+.menu_sup ul {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
 }
 
-@media screen and (max-width: 600px) {
-  header {
-    display: flex;
-    flex-direction: column;
-  }
-  main {
-    display: flex;
-    flex-direction: column;
-  }
+.menu_sup ul li {
+  margin: 0 10px;
 }
