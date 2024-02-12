@@ -1,0 +1,51 @@
+div {
+  border: solid 2px black;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.caja1 {
+  flex: 20%;
+}
+
+.caja1 img {
+  width: 150px;
+  height: 150px;
+  max-width: 100%;
+}
+
+.caja2 {
+  flex: 80%;
+}
+
+main {
+  display: flex;
+}
+
+.caja3 {
+  flex: 10%;
+}
+
+.caja4 {
+  flex: 90%;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    display: flex;
+    flex-direction: column;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+}
