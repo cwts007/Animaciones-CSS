@@ -224,7 +224,6 @@ li {
   }
 
   .header {
-    border: solid 1px black;
     grid-area: header;
     display: flex;
     flex-direction: column;
